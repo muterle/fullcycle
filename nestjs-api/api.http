@@ -1,0 +1,24 @@
+###
+GET http://localhost:3000/places?text=Av Mariano Latorre, 0, Itatiba, SP
+
+###
+@originId=ChIJrXt9BXYqz5QRiZlb-2gvwuw
+@destinationId=EkNSLiBKb8OjbyBMdXBpLCA1NDUgLSBKYXJkaW0gTWV4aWNvLCBJdGF0aWJhIC0gU1AsIDEzMjUzLTQzMiwgQnJhc2lsIjESLwoUChIJ9UBynIHVzpQRwfEhSLuxTNsQoQQqFAoSCXPDD8KB1c6UEacm--aXMSda
+
+GET http://localhost:3000/directions?originId={{originId}}&destinationId={{destinationId}}
+
+###
+POST http://localhost:3000/routes
+Content-Type: application/json
+
+{
+    "name": "ROUTE_00001",
+    "source_id": "{{originId}}",
+    "destination_id": "{{destinationId}}"
+}
+
+###
+GET http://localhost:3000/routes
+
+###
+GET http://localhost:3000/routes/67582edba1d97c3bc47fbca6
